@@ -1,5 +1,6 @@
 import React, { useState, Component } from'react'
 import BookCardEB from './BookCardEB'
+import ColRecensione from './ColRecensione'
 
 class BodyEB extends Component {
  
@@ -27,8 +28,8 @@ setAsinEvidenza = (asin) => {
                             ))
                         }
                     </div>
-                    <div className='col-0 d-none' id='colRecensione'>
-                        {}
+                    <div className={this.state.asinEvidenza?'col-0 d-none':'col-3 d-block'} id='colRecensione'>
+                        {<ColRecensione asinEvidenza={this.state.asinEvidenza} setAsinEvidenza={this.setAsinEvidenza} carrello={this.state.carrello} setCarrello={this.props.setCarrello} />}
                     </div>
                 </div>
             </div>
