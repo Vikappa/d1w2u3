@@ -14,21 +14,23 @@ class BodyEB extends Component {
 }
 
 setAsinEvidenza = (asin) => {
-    this.setState({asinEvidenza: asin})
+    this.setState({ asinEvidenza: asin }, () => {
+    })
 }
+
 
     render(){
         return(this.state.totalBooklist.length > 0?
             <div className='container'>
-                <div className='row align-items-center justify-content-center'>
-                    <div className={`${this.state.asinEvidenza? `col-md-12` : `col-md-9`} d-flex flex-wrap justify-content-center gap-2 w-100`} id='colBooks'>
+                <div className='row align-items-center justify-content-center m-0 p-0'>
+                <div className={`${this.state.asinEvidenza === null ? `col-md-12` : `col-md-6`} d-flex flex-wrap justify-content-center gap-2 w-100`} id='colBooks'>
                         {
                             this.state.totalBooklist.map((book, index) => (
                             <BookCardEB key={index} book={book} asinEvidenza={this.state.asinEvidenza} setAsinEvidenza={this.setAsinEvidenza}/>
                             ))
                         }
                     </div>
-                    <div className={this.state.asinEvidenza?'col-0 d-none':'col-3 d-block'} id='colRecensione'>
+                    <div className={this.state.asinEvidenza === null ? 'col-0 d-none' : 'col-3 d-block m-0 p-0'} id='colRecensione'>
                         {<ColRecensione asinEvidenza={this.state.asinEvidenza} setAsinEvidenza={this.setAsinEvidenza} carrello={this.state.carrello} setCarrello={this.props.setCarrello} />}
                     </div>
                 </div>
@@ -38,7 +40,6 @@ setAsinEvidenza = (asin) => {
         )
     }
 
-
 }
 
-export default BodyEB;  
+export default BodyEB

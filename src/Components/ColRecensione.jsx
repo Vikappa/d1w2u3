@@ -14,20 +14,19 @@ class ColRecensione extends Component {
     componentDidUpdate(prevProps) {
         if (this.props.asinEvidenza !== prevProps.asinEvidenza) {
             this.setState({ asinEvidenza: this.props.asinEvidenza })
+            this.props.setAsinEvidenza(this.props.asinEvidenza)
         }
 
         if (this.props.carrello !== prevProps.carrello) {
             this.setState({ carrello: this.props.carrello })
         }
-
     }
       
-
   render() {
     return (
-      <div className=''>
-PROVA
-      </div>
+        <div className='col-12 d-flex flex-column justify-content-center align-items-center'>
+<p>PROVA</p>
+        </div>
     )
   }
 }

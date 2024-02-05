@@ -1,6 +1,7 @@
 body{
   background-color: var(--bs-EpicodeTemaColore4);
   overflow-x: hidden;
+  transition: all 0.6s linear;
 }
 
 #ebNavbar{
@@ -93,7 +94,21 @@ filter: brightness(130%);
 
 @media screen and (min-width: 992px) {
   .bookWrapper{
-    min-width: 10vw;
-    max-width: 10vw;
+    min-width: 18vw;
+    max-width: 18vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bookWrapper{
+    min-width: 15vw;
+    max-width: 15vw;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .bookWrapper{
+    min-width: 12vw;
+    max-width: 12vw;
   }
 }
