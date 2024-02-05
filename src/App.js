@@ -8,6 +8,7 @@ import scifiBooks from './books/scifi.json'
 import React, { useState } from 'react'
 import NavbarEB from './Components/NavbarEB'
 import FooterEB from './Components/FooterEB'
+import Welcome from './Components/Welcome'
 import BodyEB from './Components/BodyEB'
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
   const [filtroGenere, setFiltroGenere] = useState(null)
   const [filtroPrezzoMin, setFiltroPrezzoMin] = useState(0)
   const [filtroPrezzoMax, setFiltroPrezzoMax] = useState(Infinity)
-
+ 
   const totalBooklist = [
     ...fantasyBooks,
     ...historyBooks,
@@ -28,7 +29,8 @@ function App() {
   return (
     <>
 <NavbarEB carrello={carrello} setCarrello={setCarrello} filtroTitolo={filtroTitolo} setFiltroTitolo={setFiltroTitolo} filtroGenere={filtroGenere} setFiltroGenere={setFiltroGenere} filtroPrezzoMin={filtroPrezzoMin} setFiltroPrezzoMin={setFiltroPrezzoMin} filtroPrezzoMax={filtroPrezzoMax} setFiltroPrezzoMax={setFiltroPrezzoMax} />
-<BodyEB carrello={carrello} setCarrello={setCarrello} filtroTitolo={filtroTitolo}  filtroGenere={filtroGenere} filtroPrezzoMin={filtroPrezzoMin} filtroPrezzoMax={filtroPrezzoMax}/>
+<Welcome  />
+<BodyEB carrello={carrello} setCarrello={setCarrello} filtroTitolo={filtroTitolo}  filtroGenere={filtroGenere} filtroPrezzoMin={filtroPrezzoMin} filtroPrezzoMax={filtroPrezzoMax} totalBooklist={totalBooklist} />
 <FooterEB />
     </>
   )

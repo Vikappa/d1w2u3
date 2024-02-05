@@ -1,3 +1,53 @@
 body{
   background-color: var(--bs-EpicodeTemaColore4);
 }
+
+.bookWrapper{
+}
+
+.bookCard .fs-6{
+  line-height: 1;
+}
+
+.bookCard:hover{
+  filter: brightness(120%);
+}
+
+.bookCard img{
+  height: 300px;
+}
+
+.bookCard.card{
+  min-height: 55vh !important;
+  max-height: 55vh !important;
+}
+
+@media screen and (min-width: 576px) {
+
+  
+.bookCard .card-body .card-title{
+font-size: 1.25rem !important;
+}
+.bookCard .fs-6{
+  line-height: 1.2;
+}
+}
+
+.bookEvidenza{
+filter: brightness(130%);
+
+}
+
+.bookEvidenza {
+  filter: brightness(130%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 
+              0 6px 20px rgba(0, 0, 0, 0.19); 
+  border: 1px solid #ddd; 
+}
+
+.bookEvidenza:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 
+              0 6px 20px rgba(0, 0, 0, 0.25);
+}
