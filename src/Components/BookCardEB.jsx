@@ -19,7 +19,7 @@ class BookCardEB extends Component {
   render() {
     console.log(this.props)
     return (
-      <div className='p-2 m-0 col-6 col-md-4 col-lg-3 col-xl-2 bookWrapper '>
+      <div className='bookWrapper '>
         <Card className={this.props.book.asin !== this.props.asinEvidenza? "m-0 p-0 bookCard bg-EpicodeTemaColore2" : "m-0 p-0 bookCard bg-EpicodeTemaColore5 bookEvidenza"}
          data-bs-theme="dark"
          onClick={() => this.updateBookEvidenza(this.props.book.asin)}

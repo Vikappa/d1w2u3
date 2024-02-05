@@ -18,7 +18,7 @@ function App() {
   const [filtroPrezzoMin, setFiltroPrezzoMin] = useState(0)
   const [filtroPrezzoMax, setFiltroPrezzoMax] = useState(Infinity)
  
-  const totalBooklist = [
+  let totalBooklist = [
     ...fantasyBooks,
     ...historyBooks,
     ...horrorBooks,

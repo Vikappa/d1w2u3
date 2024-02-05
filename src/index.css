@@ -1,9 +1,19 @@
 body{
   background-color: var(--bs-EpicodeTemaColore4);
+  overflow-x: hidden;
 }
 
-.bookWrapper{
+#ebNavbar{
+  border-bottom: 1px solid var(--bs-EpicodeTemaColore1) !important;
+  width: 100vw !important;
 }
+
+#ebFooter{
+  border-top: 1px solid var(--bs-EpicodeTemaColore1) !important;
+  width: 100vw !important;
+}
+
+
 
 .bookCard .fs-6{
   line-height: 1;
@@ -17,13 +27,16 @@ body{
   height: 300px;
 }
 
-.bookCard.card{
+.bookCard{
   min-height: 55vh !important;
   max-height: 55vh !important;
 }
 
-@media screen and (min-width: 576px) {
-
+@media screen and (min-height: 825px) {
+  .bookCard{
+    min-height: 60vh !important;
+    max-height: 60vh !important;
+  }
   
 .bookCard .card-body .card-title{
 font-size: 1.25rem !important;
@@ -31,6 +44,13 @@ font-size: 1.25rem !important;
 .bookCard .fs-6{
   line-height: 1.2;
 }
+}
+
+@media screen and (min-height: 915px) and (max-width: 1024px) {
+  .bookCard{
+    min-height: 45vh !important;
+    max-height: 45vh !important;
+  }
 }
 
 .bookEvidenza{
@@ -50,4 +70,30 @@ filter: brightness(130%);
   transform: translateY(-5px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 
               0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.bookWrapper{
+  min-width: 45vw;
+  max-width: 45vw;
+}
+
+@media screen and (min-width: 576px) {
+  .bookWrapper{
+    min-width: 28vw;
+    max-width: 28vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .bookWrapper{
+    min-width: 20vw;
+    max-width: 20vw;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .bookWrapper{
+    min-width: 10vw;
+    max-width: 10vw;
+  }
 }

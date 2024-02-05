@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar'
 
 function FooterEB() {
   return (
-    <Navbar fixed="bottom" expand="md" bg="EpicodeTemaColore2" data-bs-theme="dark"  className="">
+    <Navbar fixed="bottom" expand="md" bg="EpicodeTemaColore2" data-bs-theme="dark" id="ebFooter">
       <Container>
         <Navbar.Brand href="#home">EpiBook</Navbar.Brand>
           <Navbar.Text>

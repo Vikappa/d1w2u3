@@ -17,10 +17,10 @@ setAsinEvidenza = (asin) => {
 }
 
     render(){
-        return(
+        return(this.state.totalBooklist.length > 0?
             <div className='container'>
                 <div className='row align-items-center justify-content-center'>
-                    <div className={"col-md-12 d-flex flex-wrap"} id='colBooks'>
+                    <div className={`${this.state.asinEvidenza? `col-md-12` : `col-md-9`} d-flex flex-wrap justify-content-center gap-2 w-100`} id='colBooks'>
                         {
                             this.state.totalBooklist.map((book, index) => (
                             <BookCardEB key={index} book={book} asinEvidenza={this.state.asinEvidenza} setAsinEvidenza={this.setAsinEvidenza}/>
@@ -32,6 +32,8 @@ setAsinEvidenza = (asin) => {
                     </div>
                 </div>
             </div>
+            :
+            <img src="https://http.cat/status/404" alt="not found"></img>
         )
     }
 
