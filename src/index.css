@@ -1,6 +1,5 @@
 body{
   background-color: var(--bs-EpicodeTemaColore4);
-  overflow-x: hidden;
   transition: all 0.6s linear;
 }
 
@@ -111,4 +110,11 @@ filter: brightness(130%);
     min-width: 12vw;
     max-width: 12vw;
   }
+}
+
+#colRecensione {
+  position: sticky !important ;
+  top: 0 !important ; /* Ajusta questo valore secondo necessità */
+  right: 0 !important ;
+  height: auto !important ;
 }

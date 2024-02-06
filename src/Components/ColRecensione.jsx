@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import SpinnerEB from '../SpinnerEB'
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 class ColRecensione extends Component {
 
@@ -8,7 +10,8 @@ class ColRecensione extends Component {
         carrello: this.props.carrello,
         setCarrello: this.props.setCarrello,
         loading: true,
-        error: false
+        error: false,
+        fetchdata: this.fetchData
     }
 
     componentDidUpdate(prevProps) {
@@ -21,14 +24,32 @@ class ColRecensione extends Component {
             this.setState({ carrello: this.props.carrello })
         }
     }
-      
-  render() {
-    return (
-        <div className='col-12 d-flex flex-column justify-content-center align-items-center'>
-<p>PROVA</p>
-        </div>
-    )
-  }
+
+    componentDidMount() {
+        // this.fetchData() 
+    }
+
+    render() {
+        console.log(this.state)
+        console.log(this.props)
+        let loading = this.state.loading
+        return (
+            <div>
+    <Card>
+      <Card.Img variant="top" src="https://http.cat/images/102.jpg" />
+      <Card.Body>
+        <Card.Title>{loading?"Caricamento..":this.state.fetchdata.nome}</Card.Title>
+        <Card.Text className='text-center'>
+<SpinnerEB/>
+        </Card.Text>
+        <Button className='m-1' variant="EpicodeTemaColore1">Aggiungi recensione</Button>
+        <Button className='m-1' variant="EpicodeTemaColore5">Aggiungi al carrello (manymoney€)</Button>
+      </Card.Body>
+    </Card>
+            </div>
+        )
+    }
 }
 
-export default ColRecensione;
+export default ColRecensione
+
