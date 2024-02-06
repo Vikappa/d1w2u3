@@ -30,7 +30,7 @@ render() {
                 ))
             }
         </div>
-        <div className={this.state.asinEvidenza === null ? 'd-none' : 'col-6 d-inline m-0 p-0'} sticky="top" id='colRecensione'>
+        <div className={this.state.asinEvidenza === null ? 'd-none' : 'col-6 d-inline m-0 p-0'} >
             <ColRecensione asinEvidenza={this.state.asinEvidenza} setAsinEvidenza={this.setAsinEvidenza} carrello={this.state.carrello} setCarrello={this.props.setCarrello} />
         </div>
     </div>

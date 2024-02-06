@@ -114,7 +114,8 @@ filter: brightness(130%);
 
 #colRecensione {
   position: sticky !important ;
-  top: 0 !important ; /* Ajusta questo valore secondo necessità */
-  right: 0 !important ;
+  right: 5% !important ;
   height: auto !important ;
+  width: 45vw;
+  max-width: 45vw;
 }

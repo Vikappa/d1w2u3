@@ -25,25 +25,30 @@ class ColRecensione extends Component {
         }
     }
 
+    fetchData = async () => {
+        fetch()
+    }
+
     componentDidMount() {
-        // this.fetchData() 
+        this.fetchData() 
     }
 
     render() {
         console.log(this.state)
         console.log(this.props)
         let loading = this.state.loading
+        let error = this.state.error
         return (
             <div>
-    <Card>
-      <Card.Img variant="top" src="https://http.cat/images/102.jpg" />
+    <Card className='bg-EpicodeTemaColore3 m-0 p-0' data-bs-theme="dark"  id='colRecensione'>
+      <Card.Img variant="top" src={loading?"https://http.cat/images/102.jpg":error?"https://http.cat/images/400.jpg": this.state.fetchdata.img} />
       <Card.Body>
-        <Card.Title>{loading?"Caricamento..":this.state.fetchdata.nome}</Card.Title>
+        <Card.Title>{loading?"Caricamento..":error?"ERRORE" : this.state.fetchdata.nome}</Card.Title>
         <Card.Text className='text-center'>
-<SpinnerEB/>
+        {loading?<SpinnerEB/>:error?'ERRORE': this.state.fetchdata.nome}
         </Card.Text>
-        <Button className='m-1' variant="EpicodeTemaColore1">Aggiungi recensione</Button>
-        <Button className='m-1' variant="EpicodeTemaColore5">Aggiungi al carrello (manymoney€)</Button>
+        <Button className='m-1' variant="EpicodeTemaColore1">{!loading && !error?"Aggiungi recensione": ""}</Button>
+        <Button className='m-1' variant="EpicodeTemaColore5">{!loading && !error?"Aggiungi al carrello (€)": ""}</Button>
       </Card.Body>
     </Card>
             </div>
