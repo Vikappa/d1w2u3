@@ -8,7 +8,7 @@ function NavbarEB() {
   return (
     <Navbar sticky="top" expand="md" bg="EpicodeTemaColore2" data-bs-theme="dark" id="ebNavbar">
       <Container >
-        <Navbar.Brand className='d-flex align-items-center gap-3' href="#home"><img src='../icon.png' className='p-0 m-0' height={"36px"} alt="headerlogo"></img>EpiBook v2</Navbar.Brand>
+        <Navbar.Brand className='d-flex align-items-center gap-3'><img src='../icon.png' className='p-0 m-0' height={"36px"} alt="headerlogo"></img>EpiBook v2</Navbar.Brand>
         <Navbar.Toggle aria-controls="" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

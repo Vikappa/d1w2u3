@@ -5,16 +5,20 @@ import {Col} from "react-bootstrap"
 import BookCardEB from "./BookCardEB"
 
 function ColBooklist(props) {
+console.log(props)
 
+let libriDaMostrare = props.arrayLibriDaMostrare
+return (
+    <div className="d-flex flex-wrap justify-content-center">
+        {libriDaMostrare.map((libro, index) => { 
+            return (
 
-    return(
-        <Container>
-        <Row>
-        
-        </Row>
-        </Container>
-    
-    )
+                <BookCardEB key={index} libro={libro} index={index} />
+            
+            )
+        })}
+    </div>
+)
 }
 
 export default ColBooklist
