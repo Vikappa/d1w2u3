@@ -10,6 +10,8 @@ import NavbarEB from './Components/NavbarEB'
 import FooterEB from './Components/FooterEB'
 import Welcome from './Components/Welcome'
 import BodyEB from './Components/BodyEB'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import ImpostazioniEB from './Components/ImpostazioniEB'
 
 function App() {
   const [carrello, setCarrello] = useState([])
@@ -27,12 +29,21 @@ function App() {
   ]
 
   return (
-    <>
-<NavbarEB carrello={carrello} setCarrello={setCarrello} filtroTitolo={filtroTitolo} setFiltroTitolo={setFiltroTitolo} filtroGenere={filtroGenere} setFiltroGenere={setFiltroGenere} filtroPrezzoMin={filtroPrezzoMin} setFiltroPrezzoMin={setFiltroPrezzoMin} filtroPrezzoMax={filtroPrezzoMax} setFiltroPrezzoMax={setFiltroPrezzoMax} />
-<Welcome  />
-<BodyEB carrello={carrello} setCarrello={setCarrello} filtroTitolo={filtroTitolo}  filtroGenere={filtroGenere} filtroPrezzoMin={filtroPrezzoMin} filtroPrezzoMax={filtroPrezzoMax} totalBooklist={totalBooklist} />
-<FooterEB />
-    </>
+  
+<BrowserRouter>
+  <NavbarEB carrello={carrello} setCarrello={setCarrello} filtroTitolo={filtroTitolo} setFiltroTitolo={setFiltroTitolo} filtroGenere={filtroGenere} setFiltroGenere={setFiltroGenere} filtroPrezzoMin={filtroPrezzoMin} setFiltroPrezzoMin={setFiltroPrezzoMin} filtroPrezzoMax={filtroPrezzoMax} setFiltroPrezzoMax={setFiltroPrezzoMax} />
+  <Welcome  />
+  <Routes>
+    <Route path='/' element={
+      <BodyEB carrello={carrello} setCarrello={setCarrello} filtroTitolo={filtroTitolo}  filtroGenere={filtroGenere} filtroPrezzoMin={filtroPrezzoMin} filtroPrezzoMax={filtroPrezzoMax} totalBooklist={totalBooklist} />
+    } >
+    </Route>
+    <Route path='/impostazioni' element={<ImpostazioniEB/>}></Route>
+    <Route path='*' element={<h1>Not found</h1>}></Route>
+  </Routes>
+  <FooterEB />
+</BrowserRouter>
+    
   )
 }
 

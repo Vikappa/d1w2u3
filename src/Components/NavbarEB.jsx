@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from'react-router-dom';
 
 function NavbarEB() {
   return (
@@ -11,7 +12,9 @@ function NavbarEB() {
         <Navbar.Toggle aria-controls="" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Link className=' text-decoration-none temaLink' to="/">
+            <div className='d-flex flex-column justify-content-center h-100'>Home</div>
+            </Link>
             <NavDropdown title="Cerca" id="">
               <NavDropdown.Item href="#">Genere</NavDropdown.Item>
               <NavDropdown.Item href="">Prezzo</NavDropdown.Item>
@@ -19,6 +22,9 @@ function NavbarEB() {
             </NavDropdown>
             <NavDropdown title="Carrello" id="">
             </NavDropdown>
+            <Link className=' text-decoration-none temaLink' to="/impostazioni">
+            <div className='d-flex flex-column justify-content-center h-100'>Impostazioni</div>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

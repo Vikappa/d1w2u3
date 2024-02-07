@@ -13,109 +13,22 @@ body{
   width: 100vw !important;
 }
 
-
-
-.bookCard .fs-6{
-  line-height: 1;
+.temaLink {
+  color: white;
+  opacity: 0.6;
+  transition: opacity 0.3s ease; 
 }
 
-.bookCard:hover{
-  filter: brightness(120%);
+.temaLink:hover {
+  opacity: 1; 
 }
 
-.bookCard img{
-  height: 300px;
-}
-
-.bookCard{
-  min-height: 55vh !important;
-  max-height: 55vh !important;
-}
-
-@media screen and (min-height: 825px) {
-  .bookCard{
-    min-height: 60vh !important;
-    max-height: 60vh !important;
-  }
-  
-.bookCard .card-body .card-title{
-font-size: 1.25rem !important;
-}
-.bookCard .fs-6{
-  line-height: 1.2;
-}
-}
-
-@media screen and (min-height: 915px) and (max-width: 1024px) {
-  .bookCard{
-    min-height: 45vh !important;
-    max-height: 45vh !important;
-  }
-}
-
-.bookEvidenza{
-filter: brightness(130%);
-
-}
-
-.bookEvidenza {
-  filter: brightness(130%);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 
-              0 6px 20px rgba(0, 0, 0, 0.19); 
-  border: 1px solid #ddd; 
-}
-
-.bookEvidenza:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 
-              0 6px 20px rgba(0, 0, 0, 0.25);
-}
-
-.bookWrapper{
-  min-width: 45vw;
-  max-width: 45vw;
-}
-
-@media screen and (min-width: 576px) {
-  .bookWrapper{
-    min-width: 28vw;
-    max-width: 28vw;
-  }
+.temaLink:active {
+  opacity: 0.3;
 }
 
 @media screen and (min-width: 768px) {
-  .bookWrapper{
-    min-width: 20vw;
-    max-width: 20vw;
+  .temaLink {
+margin: 0 3%;
   }
-}
-
-@media screen and (min-width: 992px) {
-  .bookWrapper{
-    min-width: 18vw;
-    max-width: 18vw;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .bookWrapper{
-    min-width: 15vw;
-    max-width: 15vw;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .bookWrapper{
-    min-width: 12vw;
-    max-width: 12vw;
-  }
-}
-
-#colRecensione {
-  position: sticky !important ;
-  right: 5% !important ;
-  height: auto !important ;
-  width: 45vw;
-  max-width: 45vw;
 }
