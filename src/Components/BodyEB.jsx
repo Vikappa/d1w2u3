@@ -3,7 +3,7 @@ import ColBooklist from "./ColBooklist"
 import ColRecensione from "./ColRecensione"
 
 function BodyEB(props) {
-  
+
 const [carrello, setCarrello] = useState(props.carrello)
 const [filtroTitolo, setFiltroTitolo] = useState(props.filtroTitolo)
 const [filtroGenere, setFiltroGenere] = useState(props.filtroGenere)

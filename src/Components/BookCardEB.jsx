@@ -15,9 +15,9 @@ function BookCardEB(props) {
 
       return (
         <div className='cardWrapper'>
-            <Card>
-                <Card.Img variant="top" src={props.libro.img} className='bookCardCover' />
-                <Card.Body className='d-flex flex-column p-1 p-md-3'> 
+            <Card onClick={() => {props.setBookEvidenza(props.libro.asin)}} className={props.bookEvidenza===props.libro.asin?'bookCard bg-EpicodeTemaColore2 bookCardSelected':'bookCard bg-EpicodeTemaColore2'} data-bs-theme="dark">
+                <Card.Img variant="top" src={props.libro.img} className='bookCardCover ' />
+                <Card.Body className='d-flex flex-column p-1 p-md-2 text-center'> 
                     <Card.Title>{trimmer(props.libro.title)}</Card.Title>
                     <div className='d-flex flex-column justify-content-center'>
                         <Card.Text className='d-none d-md-inline fs-6 m-0'>
@@ -28,8 +28,7 @@ function BookCardEB(props) {
                         </Card.Text>
                     </div>
                     <div className='mt-auto d-flex flex-column justify-content-center'>
-                        <Button variant="primary" className="p-0 m-1">Aggiungi al carrello</Button>
-                        <Button variant="primary" className="p-0 m-1">Recensioni</Button>
+                        <Button variant="EpicodeTemaColore5" className="p-1 m-2 mb-0">Aggiungi al carrello (€{props.libro.price})</Button>
                     </div>
                 </Card.Body>
             </Card>

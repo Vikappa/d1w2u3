@@ -13,7 +13,7 @@ return (
         {libriDaMostrare.map((libro, index) => { 
             return (
 
-                <BookCardEB key={index} libro={libro} index={index} />
+                <BookCardEB key={index} libro={libro} index={index} bookEvidenza={props.bookEvidenza} setBookEvidenza={props.setBookEvidenza} />
             
             )
         })}
