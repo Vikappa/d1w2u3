@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react"
-import ColBooklist from "./ColBooklist"
-import ColRecensione from "./ColRecensione"
+import BloccoLibri from "./BloccoLibri"
+import BloccoRecensioni from "./BloccoRecensioni"
 
 function BodyEB(props) {
 
@@ -13,17 +13,16 @@ const [bookEvidenza, setBookEvidenza] = useState(null)
 
 
   return (
-    <div className="container-fluid w-100 d-flex">
-    <ColBooklist arrayLibriDaMostrare={arrayLibriDaMostrare} setArrayLibriDaMostrare={setArrayLibriDaMostrare} 
-    filtroTitolo={filtroTitolo}
-    filtroGenere={filtroGenere} 
-    filtroPrezzo={filtroPrezzo}
-    carrello={carrello}
-    bookEvidenza={bookEvidenza}
-    setBookEvidenza={setBookEvidenza}
-    />
-    <ColRecensione bookEvidenza={bookEvidenza} setBookEvidenza={setBookEvidenza} />
-    </div>
+<div className="d-flex flex-column flex-md-row container-fluid">
+<BloccoLibri filtroTitolo={filtroTitolo} filtroGenere={filtroGenere} 
+filtroPrezzo={filtroPrezzo} arrayLibriDaMostrare={arrayLibriDaMostrare} 
+bookEvidenza={bookEvidenza} setBookEvidenza={setBookEvidenza}
+carrello={carrello} setCarrello={setCarrello}
+/>
+<BloccoRecensioni carrello={carrello} setCarrello={setCarrello}
+bookEvidenza={bookEvidenza} setBookEvidenza={setBookEvidenza}
+/>
+</div>
   )
 }
 

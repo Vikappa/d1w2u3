@@ -1,39 +1,43 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import { useEffect } from 'react'
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+
 
 function BookCardEB(props) {
-    console.log(props)
-
-
     function trimmer(str) {
         if (str.length > 40) {
-          return str.substring(0, 37) + "...";
+          return str.substring(0, 37) + "..."
         } else {
-          return str;
+          return str
         }
       }
 
       return (
-        <div className='cardWrapper'>
-            <Card onClick={() => {props.setBookEvidenza(props.libro.asin)}} className={props.bookEvidenza===props.libro.asin?'bookCard bg-EpicodeTemaColore2 bookCardSelected':'bookCard bg-EpicodeTemaColore2'} data-bs-theme="dark">
-                <Card.Img variant="top" src={props.libro.img} className='bookCardCover ' />
-                <Card.Body className='d-flex flex-column p-1 p-md-2 text-center'> 
-                    <Card.Title>{trimmer(props.libro.title)}</Card.Title>
-                    <div className='d-flex flex-column justify-content-center'>
-                        <Card.Text className='d-none d-md-inline fs-6 m-0'>
-                            Asin: {props.libro.asin}
-                        </Card.Text>
-                        <Card.Text className='d-none d-md-inline fs-6'>
-                            Genere: {props.libro.category}
-                        </Card.Text>
-                    </div>
-                    <div className='mt-auto d-flex flex-column justify-content-center'>
-                        <Button variant="EpicodeTemaColore5" className="p-1 m-2 mb-0">Aggiungi al carrello (€{props.libro.price})</Button>
-                    </div>
-                </Card.Body>
-            </Card>
-        </div>
-    )
+        <Card 
+          className={props.bookEvidenza === props.libro.asin?"bg-dark text-white cardWrapper selectedBook":"bg-dark text-white cardWrapper"}     
+          style={{ 
+            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 4) 100%), url(${props.libro.img})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+          onClick={() => props.setBookEvidenza(props.libro.asin)}
+          >
+          <Card.ImgOverlay className='p-2 d-flex flex-column'>
+            <Card.Title className='fs-6'>{trimmer(props.libro.title)}</Card.Title>
+            <Card.Text>
+              Genere: {props.libro.category}
+            </Card.Text>
+            <Card.Text>
+              Asin: {props.libro.asin}
+            </Card.Text>
+            <div className='d-flex justify-content-center mt-auto' >
+            <Button variant="EpicodeTemaColore1" className='p-1 px-2 rounded-4'>Compra (€{props.libro.price})</Button>
+            </div>
+          </Card.ImgOverlay>
+        </Card>
+      );
+      
+      
 }
 
-export default BookCardEB;
+export default BookCardEB
