@@ -6,7 +6,7 @@
 
 <h1 align="center" style="font-size: 60px; line-height: 60px; vertical-align: middle;">EpiBook</h1>
 
-<p align="center">Remake <a href="https://github.com/Vikappa/D2W1U3">del progetto originale</a> con implementato Redux e React-router-dom</p>
+<p align="center">Remake <a href="https://github.com/Vikappa/D2W1U3">del progetto originale</a> con implementazioni di Redux e React-router-dom</p>
 
 <p align="center">
   <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React"/>
