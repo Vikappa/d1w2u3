@@ -12,6 +12,8 @@ import Welcome from './Components/Welcome'
 import BodyEB from './Components/BodyEB'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ImpostazioniEB from './Components/ImpostazioniEB'
+import { Provider } from 'react-redux'
+import store from './redux/store/store'
 
 function App() {
   const [carrello, setCarrello] = useState([])
@@ -29,7 +31,8 @@ function App() {
   ]
 
   return (
-  
+  <Provider store={store}>
+
 <BrowserRouter>
   <NavbarEB carrello={carrello} setCarrello={setCarrello} filtroTitolo={filtroTitolo} setFiltroTitolo={setFiltroTitolo} filtroGenere={filtroGenere} setFiltroGenere={setFiltroGenere} filtroPrezzoMin={filtroPrezzoMin} setFiltroPrezzoMin={setFiltroPrezzoMin} filtroPrezzoMax={filtroPrezzoMax} setFiltroPrezzoMax={setFiltroPrezzoMax} />
   <Welcome  />
@@ -44,6 +47,7 @@ function App() {
   <FooterEB />
 </BrowserRouter>
     
+      </Provider>
   )
 }
 

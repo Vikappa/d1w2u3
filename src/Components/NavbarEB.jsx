@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from'react-router-dom';
 
+
 function NavbarEB() {
   return (
     <Navbar sticky="top" expand="md" bg="EpicodeTemaColore2" data-bs-theme="dark" id="ebNavbar">
