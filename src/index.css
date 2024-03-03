@@ -33,39 +33,27 @@ margin: 0 3%;
   }
 }
 
+
+
 .cardWrapper {
-  width: 160px;
-  height: 220px;
+  margin-top: 10%;
+  height: 35vh;
   border: 2px solid var(--bs-EpicodeTemaColore1);
-  transition: all 0.5s ease; /* 'all' anima tutte le proprietà modificate */
+  transition: all 0.5s ease; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer; /* Rende chiaro che le card sono interattive */
-}
-
-.cardWrapper {
-  /* Le altre proprietà rimangono invariate */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Ombra base più profonda */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
   transition: all 0.5s ease;
 }
-
-.cardWrapper:hover, .selectedBook {
-  /* Le altre proprietà rimangono invariate */
-  transform: translateY(-2%) scale(1.1);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Ombra molto più pronunciata al hover/selezionata */
-  border: 2px solid var(--bs-EpicodeTemaColore5);
+@media screen and (max-width:300px) {
+  .cardWrapper {
+    height: 55vh;}
+}
+@media screen and (min-width:576px) {
+  .cardWrapper {
+    height: 260px;
+  }
 }
 
-.cardWrapper:hover button, .selectedBook button {
-  background-color: var(--bs-EpicodeTemaColore5);
-  border: 1px solid var(--bs-EpicodeTemaColore5);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 10px var(--bs-EpicodeTemaColore5); /* Ombra e glow combinati per i pulsanti */
-  box-shadow: 8px 0 16px rgba(0, 0, 0, 0.2), 0 0 10px var(--bs-EpicodeTemaColore5); /* Ombra e glow combinati per i pulsanti */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
 
-.cardWrapper:hover, .selectedBook {
-  /* Le altre proprietà rimangono invariate */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5), 0 0 15px var(--bs-EpicodeTemaColore5); /* Ombra profonda con glow */
-}

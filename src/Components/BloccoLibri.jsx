@@ -1,20 +1,26 @@
 import {useState, useEffect} from 'react'
 import BookCardEB from './BookCardEB'
+import { Col, Container, Row } from 'react-bootstrap'
 function BloccoLibri(props) {
 
-    const [bookEvidenza, setBookEvidenza] = useState(props.bookEvidenza)
-    const [arrayLibriDaMostrare, setArrayLibriDaMostrare] = useState(props.arrayLibriDaMostrare)
-    const [carrello, setCarrello] = useState(props.carrello)
+  const [carrello, setCarrello] = useState(props.carrello)
+const [filtroTitolo, setFiltroTitolo] = useState(props.filtroTitolo)
+const [filtroGenere, setFiltroGenere] = useState(props.filtroGenere)
+const [filtroPrezzo, setFiltroPrezzo] = useState({min: props.filtroPrezzoMin, max: props.filtroPrezzoMax})
+const [arrayLibriDaMostrare, setArrayLibriDaMostrare] = useState(props.totalBooklist)
+
     return (
-      <div className="d-flex flex-wrap align-items-center justify-content-center gap-3">
+      <Container>
+        <Row>
       {arrayLibriDaMostrare.map((libro, index) => {
     return (
-        
-        <BookCardEB key={index} libro={libro} bookEvidenza={bookEvidenza} setBookEvidenza={setBookEvidenza} carrello={carrello} setCarrello={setCarrello} />
-        
-    )
-  })}
-      </div>
+          <Col xs={6} md={3} lg={2}>
+        <BookCardEB key={index} libro={libro} carrello={carrello} setCarrello={setCarrello} />
+          </Col>
+)
+})}
+        </Row>
+</Container>
     )
   }
   
